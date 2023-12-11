@@ -21,7 +21,6 @@ import com.vanbora.vanbora.services.AvaliacaoCorridaService;
 import jakarta.validation.Valid;
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("/avaliacaoCorrida")
 @Validated
 public class AvaliacaoCorridaController {
