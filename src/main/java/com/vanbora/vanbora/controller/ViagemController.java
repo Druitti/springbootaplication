@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.vanbora.vanbora.DTOs.ContagemAvgPsgViagDTO;
 import com.vanbora.vanbora.models.Viagem;
  import com.vanbora.vanbora.services.ViagemService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/viagem")
@@ -54,6 +57,12 @@ public class ViagemController {
        
     }
 
+    @GetMapping("/passageirosPorFaixa")
+    public ResponseEntity<ContagemAvgPsgViagDTO> getMediaPorFaixa(@RequestParam String param) {
+        ContagemAvgPsgViagDTO obj = this.viagemService.calcularMediaPorFaixa();
+        return ResponseEntity.ok(obj);
+    }
+    
     
 
 

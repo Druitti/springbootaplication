@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.vanbora.vanbora.DTOs.ContagemEstrelasDTO;
 import com.vanbora.vanbora.models.AvaliacaoSuporte;
 import com.vanbora.vanbora.services.AvaliacaoSuporteService;
 
@@ -39,6 +40,11 @@ public class AvaliacaoSuporteController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(avaliacaoSuporte.getAvaliacaoID()).toUri();
         return ResponseEntity.created(uri).build();
         
+    }
+    @GetMapping("/estrelas")
+    public ResponseEntity<ContagemEstrelasDTO> contarEstrelas() {
+        ContagemEstrelasDTO obj = this.avaliacaoSuporteService.contarEstrelas();
+        return ResponseEntity.ok(obj);
     }
 
 

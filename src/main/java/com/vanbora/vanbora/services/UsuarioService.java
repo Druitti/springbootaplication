@@ -40,7 +40,7 @@ public class UsuarioService {
 
 @Transactional
     public Usuario update(Usuario usuario) {
-        Usuario novUsuario = this.findById(usuario.getCPF());
+        Usuario novUsuario = this.findById(usuario.getCpf());
         novUsuario.setNome(usuario.getNome());
         novUsuario.setEmail(usuario.getEmail());
         novUsuario.setMetodoPagamento(usuario.getMetodoPagamento());

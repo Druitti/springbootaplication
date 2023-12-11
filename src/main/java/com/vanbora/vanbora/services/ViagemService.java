@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.vanbora.vanbora.DTOs.ContagemAvgPsgViagDTO;
 import com.vanbora.vanbora.models.Viagem;
 import com.vanbora.vanbora.repositories.UsuarioRepository;
 import com.vanbora.vanbora.repositories.ViagemRepository;
@@ -52,4 +52,9 @@ public class ViagemService {
         return viagemRepository.save(novaViagem);
 
     }
+    
+    public ContagemAvgPsgViagDTO calcularMediaPorFaixa(){
+        return viagemRepository.calcularMediaPorFaixa();
+    }
+
 }

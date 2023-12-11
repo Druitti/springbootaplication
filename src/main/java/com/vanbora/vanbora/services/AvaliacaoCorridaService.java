@@ -6,6 +6,7 @@ import java.util.Optional;
  import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vanbora.vanbora.DTOs.ContagemEstrelasDTO;
 import com.vanbora.vanbora.models.AvaliacaoCorrida;
 import com.vanbora.vanbora.models.Usuario;
 import com.vanbora.vanbora.repositories.AvaliacaoCorridaRepository;
@@ -43,11 +44,10 @@ public class AvaliacaoCorridaService {
     public AvaliacaoCorrida create(AvaliacaoCorrida avaliacaoCorrida) {
         
         avaliacaoCorrida.setAvaliacaoID(null);
-       /*  avaliacaoCorrida.setUsuario(this.usuarioService.findById(avaliacaoCorrida.getUsuario().getCPF()));
-        avaliacaoCorrida.setMotorista(this.motoristaService.findById(avaliacaoCorrida.getMotorista().getCPF()));
-        avaliacaoCorrida.setViagem(this.viagemService.findById(avaliacaoCorrida.getViagem().getViagemID())); */
-        
         return avaliacaoCorridaRepository.save(avaliacaoCorrida);
+    }
+    public ContagemEstrelasDTO contarEstrelas() {
+        return avaliacaoCorridaRepository.contarEstrelas();
     }
 
 

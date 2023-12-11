@@ -37,13 +37,13 @@ public class UsuarioController{
         @PostMapping
         public ResponseEntity<Usuario> create(@Valid @RequestBody Usuario usuario) {
             this.usuarioService.create(usuario);
-            URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getCPF()).toUri();
+            URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getCpf()).toUri();
             return ResponseEntity.created(uri).build();
         }
 
         @PutMapping("/{id}")
         public ResponseEntity<Usuario> update(@PathVariable("id") Long id, @Valid @RequestBody Usuario usuario) {
-            usuario.setCPF(id);
+            usuario.setCpf(id);
             this.usuarioService.update(usuario);
             return ResponseEntity.noContent().build();
         }

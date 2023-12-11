@@ -11,6 +11,7 @@ import com.vanbora.vanbora.repositories.AvaliacaoSuporteRepository;
 
 import jakarta.transaction.Transactional;
 
+import com.vanbora.vanbora.DTOs.ContagemEstrelasDTO;
 import com.vanbora.vanbora.models.AvaliacaoSuporte;
 import com.vanbora.vanbora.models.SuporteAoUsuario;
 import com.vanbora.vanbora.models.Usuario;
@@ -40,6 +41,9 @@ public class AvaliacaoSuporteService {
         
 
         return avaliacaoSuporteRepository.save(avaliacaoSuporte);
+    }
+    public ContagemEstrelasDTO contarEstrelas() {
+        return avaliacaoSuporteRepository.contarEstrelas();
     }
 
 
