@@ -56,8 +56,7 @@ public class Viagem {
     private String destinoFinal;
     
 
-    @Column(name = "valor_viagem", nullable = false)
-    @NotNull
+    @Column(name = "valor_viagem", nullable = true,updatable = true)
     private Double valorViagem;
     
 
