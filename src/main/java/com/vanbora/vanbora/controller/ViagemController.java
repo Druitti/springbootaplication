@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.vanbora.vanbora.DTOs.ContagemAvgPsgViagDTO;
+import com.vanbora.vanbora.DTOs.TipoViagemDTO;
 import com.vanbora.vanbora.models.Viagem;
  import com.vanbora.vanbora.services.ViagemService;
 
@@ -62,6 +63,14 @@ public class ViagemController {
         ContagemAvgPsgViagDTO obj = this.viagemService.calcularMediaPorFaixa();
         return ResponseEntity.ok(obj);
     }
+
+    @GetMapping("/percentual")
+    public ResponseEntity<TipoViagemDTO> getPercentuais() {
+        TipoViagemDTO obj = this.viagemService.calcularPercentuais();
+        return ResponseEntity.ok(obj);
+    }
+    
+
     
     
 
