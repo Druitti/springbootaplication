@@ -48,6 +48,7 @@ public class ViagemService {
         novaViagem.setStatusViagem(viagem.getStatusViagem());
         novaViagem.setQuantidadeDePassageiros(viagem.getQuantidadeDePassageiros());
         novaViagem.setUsuarios(viagem.getUsuarios());
+        novaViagem.setMotorista(viagem.getMotorista());
 
         return viagemRepository.save(novaViagem);
 

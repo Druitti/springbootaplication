@@ -79,13 +79,13 @@ public class Viagem {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "viagens_usuarios",
-        joinColumns = @JoinColumn(name = "usuario_fk"),
-        inverseJoinColumns = @JoinColumn(name = "viagem_fk")
+        joinColumns = @JoinColumn(name = "usuario_fk",updatable = true,nullable = true),
+        inverseJoinColumns = @JoinColumn(name = "viagem_fk",updatable = true,nullable = true)
     )
     private Set<Usuario> usuarios;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "motoristacpf", referencedColumnName = "cpf", updatable = false)
+    @JoinColumn(name = "motoristacpf", referencedColumnName = "cpf", updatable = true,nullable = true)
     private Motorista motorista;
 
     

@@ -28,5 +28,7 @@ public class SuporteAoUsuarioService {
         
         return suporteAoUsuarioRepository.save(suporteAoUsuario);
     }
-    
+    public Object SuportesResolvidosPorcentagem() {
+        return suporteAoUsuarioRepository.SuportesResolvidosPorcentagem();
+    }
 }

@@ -44,4 +44,9 @@ public class SuporteController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(suporteAoUsuario.getTicketID()).toUri();
         return ResponseEntity.created(uri).build();
     }
+    @GetMapping("/percentual")
+    public ResponseEntity<Object> SuportesResolvidosPorcentagem() {
+        Object obj = this.suporteAoUsuarioService.SuportesResolvidosPorcentagem();
+        return ResponseEntity.ok(obj);
+    }
 }
