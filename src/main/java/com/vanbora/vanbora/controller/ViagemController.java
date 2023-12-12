@@ -58,7 +58,7 @@ public class ViagemController {
     }
 
     @GetMapping("/passageirosPorFaixa")
-    public ResponseEntity<ContagemAvgPsgViagDTO> getMediaPorFaixa(@RequestParam String param) {
+    public ResponseEntity<ContagemAvgPsgViagDTO> getMediaPorFaixa() {
         ContagemAvgPsgViagDTO obj = this.viagemService.calcularMediaPorFaixa();
         return ResponseEntity.ok(obj);
     }
