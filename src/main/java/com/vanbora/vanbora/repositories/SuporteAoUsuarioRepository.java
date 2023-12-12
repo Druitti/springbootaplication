@@ -8,7 +8,11 @@ import com.vanbora.vanbora.models.SuporteAoUsuario;
 public interface SuporteAoUsuarioRepository extends JpaRepository<SuporteAoUsuario,Long> {
 
 
-    @Query("SELECT (SUM(CASE WHEN s.statusSolicitacao = 'RESOLVIDO' THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS porcentagem " +
+    @Query("SELECT " +
+       "    new com.vanbora.vanbora.DTOs.PercentualDTO(" +
+       "        (SUM(CASE WHEN s.statusSolicitacao = 'RESOLVIDO' THEN 1 ELSE 0 END) / COUNT(*)) * 100, " +
+       "        (SUM(CASE WHEN s.statusSolicitacao != 'RESOLVIDO' THEN 1 ELSE 0 END) / COUNT(*)) * 100 " +
+       "    ) " +
        "FROM SuporteAoUsuario s")
 
 
