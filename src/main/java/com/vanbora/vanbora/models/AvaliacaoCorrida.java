@@ -19,24 +19,24 @@ import java.util.Objects;
         @Column(name = "avaliacaoid",unique = true)
         private Long avaliacaoID;
 
-        @Column(name = "comentario", columnDefinition = "TEXT", nullable = false)
+        @Column(name = "comentario", columnDefinition = "TEXT", nullable = true)
         private String comentario;
         
         @Column(name = "estrelas")
         private Integer estrelas;
 
         @ManyToOne(optional = true)
-        @JoinColumn(name = "usuariocpf", referencedColumnName = "cpf", nullable = false, updatable = false)
+        @JoinColumn(name = "usuariocpf", referencedColumnName = "cpf", nullable = true, updatable = true)
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
         private Usuario usuario;
 
         @ManyToOne(optional = true)
-        @JoinColumn(name = "motoristacpf", referencedColumnName = "cpf", nullable = false, updatable = false)
+        @JoinColumn(name = "motoristacpf", referencedColumnName = "cpf", nullable = true, updatable = true)
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
         private Motorista motorista;
 
         @ManyToOne(optional = true)
-        @JoinColumn(name = "viagemid", referencedColumnName = "viagemid", nullable = false, updatable = false)
+        @JoinColumn(name = "viagemid", referencedColumnName = "viagemid", nullable = true, updatable = true)
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
         private Viagem viagem;
 
